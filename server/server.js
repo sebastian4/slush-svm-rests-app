@@ -24,6 +24,9 @@
     // add json placeholder proxy
     require('./proxy-jsonplaceholder').addRest(app);
 
+    // add gizmo rest
+    require('./rest-gizmo').addRest(app);
+    
   }
 
   ////
