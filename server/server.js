@@ -15,6 +15,9 @@
     // add hello rest
     require('./rest-hello').addRest(app);
 
+    // add hi rest
+    require('./rest-hi').addRest(app);
+
     // add earthquake proxy
     require('./proxy-earthquake').addRest(app);
 

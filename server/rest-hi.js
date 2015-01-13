@@ -10,14 +10,14 @@
     var router = express.Router(); 
 
     router.get('/', function (req, res) {
-        res.send('Hello World!');
+        res.send('Hi World!');
     });
 
     router.get('/:name', function (req, res) {
-        res.send('Hello '+req.params.name);
+        res.send('Hi '+req.params.name);
     });
 
-    app.use('/hello', router);
+    app.use('/hi', router);
 
   }
 
