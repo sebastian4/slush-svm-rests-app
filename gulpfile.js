@@ -68,7 +68,7 @@ gulp.task('wiredep', function () {
 
 gulp.task('connect', function () {
     
-    require('./server');
+    require('./server/server');
     
 });
 

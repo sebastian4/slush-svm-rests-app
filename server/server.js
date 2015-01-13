@@ -1,6 +1,7 @@
 (function(){
 
   'use strict';
+
   var express = require('express');
   var reloader = require('connect-livereload');
   var proxy = require('express-http-proxy');
@@ -10,7 +11,7 @@
       res.send('Hello World!');
   });
 
-  app.use('/eqk', proxy('earthquake.usgs.gov', {
+  app.use('/quake', proxy('earthquake.usgs.gov', {
     forwardPath: function(req, res) {
       var newurl = '/earthquakes/feed/v1.0/summary'+req.url
       console.log(newurl);
