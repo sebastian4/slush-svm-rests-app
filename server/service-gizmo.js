@@ -18,7 +18,7 @@
 
   exports.get = function(gid) {
     for (var i = 0; i < gizmos.length; i++) {
-        if (gizmos[i].id === gid) {
+        if (gizmos[i].id == gid) {
           return gizmos[i];
         }
     }
@@ -27,17 +27,21 @@
 
   exports.remove = function(gid) {
     var index = findIndex(gid);
-    gizmos.splice(index,1);
+    if (index > -1) {
+      gizmos.splice(index,1);
+    }
   }
 
   exports.update = function(gizmo) {
     var index = findIndex(gizmo.id);
-    gizmos.splice(index,1,gizmo);
+    if (index > -1) {
+      gizmos.splice(index,1,gizmo);
+    }
   }
 
   var findIndex = function(gid) {
     for (var i = 0; i < gizmos.length; i++) {
-        if (gizmos[i].id === gid) {
+        if (gizmos[i].id == gid) {
           return i;
         }
     }

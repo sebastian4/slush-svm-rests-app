@@ -5,7 +5,16 @@
   // main library initializations
   var express = require('express');
   var reloader = require('connect-livereload');
+  var bodyParser = require("body-parser");
   var app = express();
+
+  // server configurations
+  app.use(bodyParser());
+  // app.use(require('connect').bodyParser());
+  // app.configure(function(){
+  //   app.use(express.bodyParser());
+  //   app.use(app.router);
+  // });
 
   ////
 
@@ -26,7 +35,7 @@
 
     // add gizmo rest
     require('./rest-gizmo').addRest(app);
-    
+
   }
 
   ////
