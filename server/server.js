@@ -13,18 +13,17 @@
   var addRestApis = function() {
 
     // add hello rest
-    var restHello = require('./rest-hello');
-    restHello.addRest(app);
+    require('./rest-hello').addRest(app);
 
     // add earthquake proxy
-    var proxyEarthquake = require('./proxy-earthquake');
-    proxyEarthquake.addRest(app);
+    require('./proxy-earthquake').addRest(app);
 
     // add json placeholder proxy
-    var proxyJsonPlaceholder = require('./proxy-jsonplaceholder');
-    proxyJsonPlaceholder.addRest(app);
+    require('./proxy-jsonplaceholder').addRest(app);
 
   }
+
+  ////
 
   // initializes server and pres
   var initializeServer = function() {
