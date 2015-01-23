@@ -1,4 +1,7 @@
 (function(){
+
+	console.log("timezone-home");
+	
 	moment.locale("en");
 
 	var $map = $('.map-inset'),

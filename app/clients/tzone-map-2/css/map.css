@@ -1,6 +1,7 @@
 .map {
     margin:0 auto;
-    max-width:1024px;
+    /*max-width:1024px;*/
+    max-width:554px;
     padding:40px;
 }
 .map-wrap {
