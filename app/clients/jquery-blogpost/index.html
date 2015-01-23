@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title>Blog Post</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+    <script type="text/javascript" src="jquery.blogpost.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.blogpost').blogPost({
+                buttonPress: function () {
+                    alert('Button was clicked');
+                    }
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="blogpost"></div>
+
+</body>
+</html>
