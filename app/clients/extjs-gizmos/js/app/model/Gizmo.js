@@ -1,4 +1,12 @@
 Ext.define('gizmoManager.model.Gizmo', {
     extend: 'Ext.data.Model',
-    fields: ['id','description']
+    fields: [
+    	{
+            name: 'id', 
+            type: 'int'
+        },
+        {	name: 'description',
+        	type: 'string'
+        }
+    ]
 });

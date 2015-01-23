@@ -3,13 +3,22 @@
   'use strict';
 
   var gizmos = [];
+  
+  var gizIndex = 1000;
 
   exports.sayHello = function() {
     console.log("hello from gizmo");
   }
 
   exports.add = function(gizmo) {
-    gizmos.push(gizmo);
+	  if (typeof gizmo.id === 'undefined'){
+		  gizmo.id = gizIndex;
+		  gizIndex++;
+	   } else if (gizmo.id == 0) {
+ 		  gizmo.id = gizIndex;
+ 		  gizIndex++;
+	   }
+	   gizmos.push(gizmo);
   }
 
   exports.getAll = function() {

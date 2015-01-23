@@ -9,11 +9,16 @@ Ext.define('gizmoManager.view.MainContainer', {
             store: 'Gizmo',
             name: 'editableGrid',
             columns: [
-                {text: 'ID', dataIndex: 'id', width: 300},
+                {text: 'ID', dataIndex: 'id', width: 300
+                    // ,editor: {
+                    //     xtype: 'textfield',
+                    //     allowBlank: false
+                    // }
+                },
                 {text: 'DESCRIPTION', dataIndex: 'description', width: 300,
                     editor: {
                         xtype: 'textfield',
-                        allowBlank: false
+                        allowBlank: true
                     }}
             ],
             columnLines: true,
