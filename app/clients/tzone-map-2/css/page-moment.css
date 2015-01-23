@@ -1,0 +1,157 @@
+
+.is-moment .hero {
+    background-color:#61b2a7;
+    box-shadow:inset 0 10px 10px #61b2a7;
+}
+.is-moment-timezone .hero {
+    background-color:#4e7cad;
+    box-shadow:inset 0 10px 10px #4e7cad;
+}
+
+.is-moment .hero-circle {
+    background-color:#61b2a7;
+}
+.is-moment-timezone .hero-circle {
+    background-color:#4e7cad;
+}
+
+.is-moment .hero-oneline h1 span, .is-moment .hero-title h1 span {
+    color:#b0d8d3;
+}
+.is-moment-timezone .hero-oneline h1 span, .is-moment-timezone .hero-title h1 span {
+    color:#a6bdd6;
+}
+
+.is-moment footer {
+    background-color:#61b2a7;
+}
+.is-moment-timezone footer {
+    background-color:#4e7cad;
+}
+
+.is-moment .nav-pages a {
+    color:#61b2a7;
+}
+.is-moment .nav-pages a:hover {
+    background:rgba(97, 178, 167, 0.2);
+}
+.is-moment .nav-pages a:active, .is-moment .nav-pages a:focus, .is-moment .nav-pages a.active {
+    color:#222;
+    background:#61b2a7;
+}
+.is-moment-timezone .nav-pages a {
+    color:#4e7cad;
+}
+.is-moment-timezone .nav-pages a:hover {
+    background:rgba(78, 124, 173, 0.2);
+}
+.is-moment-timezone .nav-pages a:active, .is-moment-timezone .nav-pages a:focus, .is-moment-timezone .nav-pages a.active {
+    color:#222;
+    background:#4e7cad;
+}
+
+.is-moment .builds-button-source {
+    background-color:#61b2a7;
+}
+.is-moment .builds-button-source:hover {
+    background-color:#70b9af;
+}
+.is-moment .builds-button-source:active {
+    background-color:#5aa399;
+}
+.is-moment-timezone .builds-button-source {
+    background-color:#4e7cad;
+}
+.is-moment-timezone .builds-button-source:hover {
+    background-color:#5f89b5;
+}
+.is-moment-timezone .builds-button-source:active {
+    background-color:#49739f;
+}
+
+.is-moment .builds-button-gzipped {
+    background:rgba(97, 178, 167, 0.2);
+}
+.is-moment .builds-button-gzipped:hover {
+    background:rgba(97, 178, 167, 0.1);
+}
+.is-moment .builds-button-gzipped:active {
+    background:rgba(97, 178, 167, 0.4);
+}
+.is-moment-timezone .builds-button-gzipped {
+    background:rgba(78, 124, 173, 0.2);
+}
+.is-moment-timezone .builds-button-gzipped:hover {
+    background:rgba(78, 124, 173, 0.1);
+}
+.is-moment-timezone .builds-button-gzipped:active {
+    background:rgba(78, 124, 173, 0.4);
+}
+
+.is-moment .docs-nav .active a {
+    border-left-color:rgba(97, 178, 167, 0.3);
+}
+.is-moment-timezone .docs-nav .active a {
+    border-left-color:rgba(78, 124, 173, 0.3);
+}
+
+.is-moment .docs-nav a:hover, .is-moment .docs-nav a.active {
+    background:rgba(97, 178, 167, 0.1);
+    border-left-color:#61b2a7;
+}
+.is-moment-timezone .docs-nav a:hover, .is-moment-timezone .docs-nav a.active {
+    background:rgba(78, 124, 173, 0.1);
+    border-left-color:#4e7cad;
+}
+
+.is-moment .docs-nav-item {
+    color:#61b2a7;
+}
+.is-moment-timezone .docs-nav-item {
+    color:#4e7cad;
+}
+
+.is-moment .docs-section-title {
+    background-color:#61b2a7;
+}
+.is-moment-timezone .docs-section-title {
+    background-color:#4e7cad;
+}
+
+.is-moment .docs-method-signature pre {
+    border-color:rgba(97, 178, 167, 0.7);
+    background:rgba(97, 178, 167, 0.15);
+}
+.is-moment-timezone .docs-method-signature pre {
+    border-color:rgba(78, 124, 173, 0.7);
+    background:rgba(78, 124, 173, 0.15);
+}
+
+.is-moment .tests-reporting .button {
+    background-color:#61b2a7;
+}
+.is-moment .tests-reporting .button:hover {
+    background-color:#70b9af;
+}
+.is-moment .tests-reporting .button:active {
+    background-color:#5aa399;
+}
+.is-moment-timezone .tests-reporting .button {
+    background-color:#4e7cad;
+}
+.is-moment-timezone .tests-reporting .button:hover {
+    background-color:#5f89b5;
+}
+.is-moment-timezone .tests-reporting .button:active {
+    background-color:#49739f;
+}
+
+.page-moment-index {
+    max-width:800px;
+    margin:0 auto;
+    padding:0 20px;
+}
+.page-moment-index h3 {
+    margin:10px 0;
+    text-align:center;
+}

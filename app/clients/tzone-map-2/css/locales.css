@@ -1,0 +1,24 @@
+.locales {
+    margin-bottom:20px;
+}
+.locales h2 {
+    padding:0 0 20px;
+    margin:0;
+}
+.locales .button {
+    display:inline-block;
+    padding:5px 10px;
+    margin:4px 2px;
+    background:#fff;
+    border-radius:3px;
+    border:1px solid #999;
+    cursor:pointer;
+}
+.locales .button:hover {
+    box-shadow:1px 0 5px rgba(0, 0, 0, 0.2);
+}
+.locales .button.active {
+    background:#333;
+    color:#ccc;
+    border-color:#000;
+}
