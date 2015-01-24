@@ -1,7 +1,8 @@
 {
   "name": "slush-svm-rests-app",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "connect": "^3.3.2",
     "connect-livereload": "^0.5.0",

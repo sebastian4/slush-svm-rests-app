@@ -5,6 +5,7 @@
   // main library initializations
   var express = require('express');
   var reloader = require('connect-livereload');
+  var serveIndex = require('serve-index');
   var bodyParser = require("body-parser");
   var app = express();
 
@@ -48,6 +49,7 @@
 
     // add static pages
     app.use(express.static('./app'));
+    app.use(serveIndex('./app', {'icons': true}));
 
     // start server
     app.listen(9000, function(){
