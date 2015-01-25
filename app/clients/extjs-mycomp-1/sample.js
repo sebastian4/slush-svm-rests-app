@@ -4,7 +4,7 @@ Ext.onReady(function() {
 
 	console.log("sample init");
 
-	var win = Ext.create('MyApp.MyWindow');
+	var win = Ext.create('Svm.MyComp1');
 	win.show();
 
 });
