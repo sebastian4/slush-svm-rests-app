@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css"/>
+    <title>Animating a dialog box using the Ext.Msg class and Ext JS</title>
+    <!-- http://senchaexamples.com/2012/02/21/animating-a-dialog-box-using-the-ext-msg-class-and-ext-js/ -->
+</head>
+<body>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            Ext.create('Ext.Button', {
+                id: 'btn',
+                text: 'Click to launch dialog',
+                handler: function () {
+                    Ext.Msg.show({
+                        animateTarget: 'btn',
+                        title: 'Everyday I\'m animatin\'',
+                        msg: 'I should have animated relative to the Ext.Button instance.<br><br>Didn\'t see? Close the dialog and try again.'
+                    });
+                },
+                renderTo: Ext.getBody()
+            })
+        });
+    </script>
+    
+</body>
+</html>

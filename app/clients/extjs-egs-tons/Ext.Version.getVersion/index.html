@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css"/>
+    <title>Determining the application Ext JS framework version number using Ext JS</title>
+    <!-- http://senchaexamples.com/2012/02/24/determining-the-application-ext-js-framework-version-number-using-ext-js/ -->
+</head>
+<body>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/ext-all.js"></script>
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            Ext.Msg.show({title: 'Built using Sencha Ext JS ' + Ext.getVersion('extjs'),
+                closable: false});
+        });
+    </script>
+    
+</body>
+</html>
