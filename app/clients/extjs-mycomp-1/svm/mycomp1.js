@@ -2,7 +2,7 @@ Ext.onReady(function() {
 
 	console.log("mycomp1 init");
 
-	Ext.define('Svm.MyComp1', {
+	Ext.define('svm.mycomp1', {
 		extend : 'Ext.Window',
 		minimizable : true,
 		maximizable : true,
@@ -11,8 +11,13 @@ Ext.onReady(function() {
 			this.items = [
 				{
 					xtype : 'textfield',
-					name : 'tfName',
-					fieldLabel : 'Enter your name'
+					name : 'fName',
+					fieldLabel : 'first name'
+				},
+				{
+					xtype : 'textfield',
+					name : 'lName',
+					fieldLabel : 'last name'
 				}
 			], this.callParent(arguments);
 		}
