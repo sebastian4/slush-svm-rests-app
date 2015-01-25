@@ -16,6 +16,12 @@ Ext.onReady(function() {
 			panel2,
 			{
 				xtype : 'svm.mycomp2'
+			},
+			{
+				xtype: 'svm.mycomp3'
+			},
+			{
+				xtype: 'mysample'
 			}
 		]
 	});
