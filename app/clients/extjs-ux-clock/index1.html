@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ext.ux.Clock</title>
+
+    <!--Ext styles-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/ext-all.css"/>
+
+    <style type"text/css">
+
+        .ext-ux-clock
+        {
+            background:transparent;
+        }
+
+        .ext-ux-clock-inner
+        {
+            z-index:1;
+            position:relative;
+        }
+
+        .ext-ux-clock-img
+        {
+            z-index:-1;
+            position:absolute;
+            top:0;
+            left:0;
+            background:transparent url(./images/glow.png) no-repeat center center;
+        }
+
+        .ext-ux-clock-label
+        {
+            color:Gray;
+            padding-top:10px;
+            font-size:11px;
+            text-shadow: rgba(255,255,255,.2) 0 -1px 0;
+            text-align:center;
+        }
+    </style>
+
+    <!--Ext lib and UX components-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/ext-all-debug.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/1.5.2/raphael-min.js"></script>
+    <script src="js/ext.ux.clock.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        Ext.onReady(function(){
+            var clock = new Ext.ux.Clock({
+                height:350,
+                width:350
+            });
+
+            clock.render(Ext.getBody());
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

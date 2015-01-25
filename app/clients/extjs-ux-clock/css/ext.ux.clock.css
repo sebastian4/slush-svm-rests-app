@@ -1,0 +1,52 @@
+﻿/**
+*
+*   MIT License
+*
+*   Copyright (c) 2010 Mats Bryntse
+*
+*   Permission is hereby granted, free of charge, to any person obtaining a copy
+*   of this software and associated documentation files (the "Software"), to deal
+*   in the Software without restriction, including without limitation the rights
+*   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*   copies of the Software, and to permit persons to whom the Software is
+*   furnished to do so, subject to the following conditions:
+*
+*   The above copyright notice and this permission notice shall be included in
+*   all copies or substantial portions of the Software.
+*
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+*   THE SOFTWARE.
+**/
+
+.ext-ux-clock
+{
+    background:transparent;
+}
+
+.ext-ux-clock-inner
+{
+    z-index:1;
+    position:relative;
+}
+
+.ext-ux-clock-img
+{
+    z-index:-1;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.ext-ux-clock-label
+{
+    color:Gray;
+    padding-top:10px;
+    font-size:11px;
+    text-shadow: rgba(255,255,255,.2) 0 -1px 0;
+    text-align:center;
+}
