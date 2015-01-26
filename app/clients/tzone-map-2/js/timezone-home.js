@@ -20,6 +20,7 @@
 	}).resize();
 
 	function changeCenter (center) {
+		console.log("changeCenter");
 		if (center === lastCenter) {
 			return;
 		}
@@ -31,6 +32,7 @@
 	}
 
 	function Center (data) {
+		console.log("Center");
 		this.name = data.name;
 		this.x = (180 + data.long) / 360;
 		this.y = (90 - data.lat) / 180;
@@ -50,6 +52,7 @@
 			return dx * dx + dy * dy;
 		},
 		activate : function () {
+			console.log("activate");
 			var m = moment().tz(this.name);
 			$labelName.text(this.name);
 			$labelTime.text(m.format("hh:mm a ") + m.zoneAbbr());
