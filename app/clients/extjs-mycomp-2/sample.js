@@ -4,8 +4,8 @@ Ext.onReady(function() {
 
 	////
 
-	var image = Ext.create('Ext.ux.Image');
-	var sample2 = Ext.create('svm.mysample2');
+	var image = Ext.create('Ext.ux.TwoImages');
+	var sample2 = Ext.create('svm.MySample2');
 
 	////
 

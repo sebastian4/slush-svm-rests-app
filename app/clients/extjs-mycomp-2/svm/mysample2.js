@@ -1,4 +1,4 @@
-Ext.define('svm.mysample2', {
+Ext.define('svm.MySample2', {
     extend: 'Ext.panel.Panel',
     alias : 'widget.svm.mysample2',
     title : 'Sample Form',

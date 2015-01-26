@@ -1,22 +1,22 @@
-Ext.define('Ext.ux.Image', {
+Ext.define('Ext.ux.TwoImages', {
     extend: 'Ext.Component', // subclass Ext.Component
-    alias: 'widget.managedimage', // this component will have an xtype of 'managedimage'
+    alias: 'widget.twoimages', // this component will have an xtype of 'managedimage'
 
     autoEl: {
         tag: 'img',
         src: Ext.BLANK_IMAGE_URL,
-        cls: 'my-managed-image'
+        cls: 'two-images'
     },
 
     initComponent: function() {
-        console.log("managedimage initComponent");
+        console.log("twoimages initComponent");
 
     },
 
     // Add custom processing to the onRender phase.
     // Add a 'load' listener to the element.
     onRender: function() {
-        console.log("managedimage onRender");
+        console.log("twoimages onRender");
         this.autoEl = Ext.apply({}, this.initialConfig, this.autoEl);
         this.callParent(arguments);
         this.el.on('load', this.onLoad, this);
