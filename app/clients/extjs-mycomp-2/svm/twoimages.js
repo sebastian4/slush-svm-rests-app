@@ -34,14 +34,13 @@ Ext.define('Ext.ux.TwoImages', {
     onRender: function() {
         console.log("twoimages onRender");
         //this.autoEl = Ext.apply({}, this.initialConfig, this.autoEl);
-        console.log(this.items.items[1]);
+        var img1 = this.items.items[1];
+        console.log(this);
+        console.log(img1);
         this.callParent(arguments);
-        this.el.on('load', this.onLoad, this);
-        this.el.on('click', this.onClick, this);
-    },
+        this.getEl().on('click', this.onClick, this);
 
-    onLoad: function() {
-        this.fireEvent('load', this);
+        //img1.el.on('click', function() { console.log("clicky"); }, this);
     },
 
     onClick: function() {
