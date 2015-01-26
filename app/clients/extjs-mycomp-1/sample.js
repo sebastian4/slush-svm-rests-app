@@ -42,6 +42,7 @@ Ext.onReady(function() {
 		image.setSrc(imgs[imgIndex]);
 	    console.log(imgIndex+' image clicked: ', image.getSrc());
 	});
+	
 	image.on('load', function() {
 	    console.log('image loaded: ', image.getSrc());
 	});

@@ -8,9 +8,15 @@ Ext.define('Ext.ux.Image', {
         cls: 'my-managed-image'
     },
 
+    initComponent: function() {
+        console.log("managedimage initComponent");
+
+    },
+
     // Add custom processing to the onRender phase.
     // Add a 'load' listener to the element.
     onRender: function() {
+        console.log("managedimage onRender");
         this.autoEl = Ext.apply({}, this.initialConfig, this.autoEl);
         this.callParent(arguments);
         this.el.on('load', this.onLoad, this);

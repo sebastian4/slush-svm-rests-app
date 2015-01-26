@@ -46,4 +46,5 @@ Ext.define('mysample', {
 
         this.callParent(arguments);
     }
+    
 });
