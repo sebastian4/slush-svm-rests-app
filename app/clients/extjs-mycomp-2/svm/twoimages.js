@@ -1,23 +1,40 @@
 Ext.define('Ext.ux.TwoImages', {
-    extend: 'Ext.Component', // subclass Ext.Component
+    extend: 'Ext.Panel', // subclass Ext.Component
     alias: 'widget.twoimages', // this component will have an xtype of 'managedimage'
 
-    autoEl: {
-        tag: 'img',
-        src: Ext.BLANK_IMAGE_URL,
-        cls: 'two-images'
-    },
+    // autoEl: {
+    //     tag: 'img',
+    //     src: Ext.BLANK_IMAGE_URL,
+    //     cls: 'two-images'
+    // },
 
-    initComponent: function() {
-        console.log("twoimages initComponent");
+    cls: 'two-images',
 
-    },
+    items: [
+        {
+            xtype: 'datefield',
+            fieldLabel: 'Start date'
+        }, 
+        {
+            xtype: 'component',
+            autoEl: {
+                tag: 'img',
+                src: 'http://images.clipartpanda.com/clipart-smiley-face-smiley_face_13.png'
+            }
+        },
+        {
+            xtype: 'component',
+            autoEl: {
+                tag: 'img',
+                src: 'http://images.clipartpanda.com/clipart-smiley-face-smiley_face_13.png'
+            }
+        }
+    ],
 
-    // Add custom processing to the onRender phase.
-    // Add a 'load' listener to the element.
     onRender: function() {
         console.log("twoimages onRender");
-        this.autoEl = Ext.apply({}, this.initialConfig, this.autoEl);
+        //this.autoEl = Ext.apply({}, this.initialConfig, this.autoEl);
+        console.log(this.items.items[1]);
         this.callParent(arguments);
         this.el.on('load', this.onLoad, this);
         this.el.on('click', this.onClick, this);
@@ -32,14 +49,15 @@ Ext.define('Ext.ux.TwoImages', {
     },
 
     setSrc: function(src) {
-        if (this.rendered) {
-            this.el.dom.src = src;
-        } else {
-            this.src = src;
-        }
+        // if (this.rendered) {
+        //     this.el.dom.src = src;
+        // } else {
+        //     this.src = src;
+        // }
     },
 
     getSrc: function(src) {
-        return this.el.dom.src || this.src;
+        return 0;
+        // return this.el.dom.src || this.src;
     }
 });

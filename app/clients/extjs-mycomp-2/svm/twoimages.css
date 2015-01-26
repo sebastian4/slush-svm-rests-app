@@ -1,9 +1,8 @@
-/*.two-images img {
-	height: 60px;
-	width: 60px;
-}*/
-
 .two-images {
-	height: 60px;
-	width: 60px;
+	width: 200px;
+}
+
+.two-images img {
+	height: 100px;
+	width: 100px;
 }

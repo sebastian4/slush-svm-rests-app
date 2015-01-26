@@ -4,7 +4,7 @@ Ext.onReady(function() {
 
 	////
 
-	var image = Ext.create('Ext.ux.TwoImages');
+	var images = Ext.create('Ext.ux.TwoImages');
 	var sample2 = Ext.create('svm.MySample2');
 
 	////
@@ -12,30 +12,30 @@ Ext.onReady(function() {
 	Ext.create('Ext.container.Viewport', {
 		items : [ 
 			sample2,
-			image
+			images
 		]
 	});
 
 	////
 
-	var imgIndex = 0;
-	var imgs = [
-		'http://www.sencha.com/img/sencha-large.png',
-		'http://images.clipartpanda.com/clipart-smiley-face-smiley_face_13.png',
-		'http://www.petyourdog.com/uploads/articles/17-6.jpg'
-	];
+	// var imgIndex = 0;
+	// var imgs = [
+	// 	'http://www.sencha.com/img/sencha-large.png',
+	// 	'http://images.clipartpanda.com/clipart-smiley-face-smiley_face_13.png',
+	// 	'http://www.petyourdog.com/uploads/articles/17-6.jpg'
+	// ];
 
-	image.on('click', function(e) {
-		if (imgIndex > 1)	imgIndex = 0;
-		else	imgIndex++;
-		image.setSrc(imgs[imgIndex]);
-	    console.log(imgIndex+' image clicked: ', image.getSrc());
-	});
+	// image.on('click', function(e) {
+	// 	if (imgIndex > 1)	imgIndex = 0;
+	// 	else	imgIndex++;
+	// 	image.setSrc(imgs[imgIndex]);
+	//     console.log(imgIndex+' image clicked: ', image.getSrc());
+	// });
 	
-	image.on('load', function() {
-	    console.log('image loaded: ', image.getSrc());
+	images.on('load', function() {
+	    console.log('images loaded');
 	});
 
-	image.setSrc(imgs[imgIndex]);
+	// image.setSrc(imgs[imgIndex]);
 
 });
