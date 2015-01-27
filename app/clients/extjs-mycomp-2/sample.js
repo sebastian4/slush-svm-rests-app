@@ -32,9 +32,9 @@ Ext.onReady(function() {
 	//     console.log(imgIndex+' image clicked: ', image.getSrc());
 	// });
 
-	images.on('click', function(e) {
-		console.log("image clicked");
-	});
+	// images.on('click', function(e) {
+	// 	console.log("image clicked");
+	// });
 
 	// image.setSrc(imgs[imgIndex]);
 
