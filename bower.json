@@ -4,7 +4,9 @@
   "dependencies": {
     "normalize-css": "~3.0.1",
     "jquery": "~1.11.0",
-    "bower-extjs": "~0.0.4"
+    "bower-extjs": "~0.0.4",
+	"extjs-deft-bowerpackage": "~0.8.1-pre",
+	"todomvc-common": "~0.3.0"
   },
   "devDependencies": {}
 }
