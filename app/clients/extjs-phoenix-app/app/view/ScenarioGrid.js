@@ -9,6 +9,7 @@ Ext.define("Phoenix.view.ScenarioGrid", {
   controller: "Phoenix.controller.ScenarioGridController",
   requires: ["Ext.grid.column.Number", "Ext.grid.column.Date", "Ext.grid.column.Action"],
   inject: ["scenarioStore", "probabilityStore"],
+  itemId: 'myScenarioGrid',
   config: {
     scenarioStore: null,
     probabilityStore: null
@@ -97,6 +98,7 @@ Ext.define("Phoenix.view.ScenarioGrid", {
       columnLines: true,
       viewConfig: {
         stripeRows: true,
+        itemId: 'myViewConfig',
         emptyText: "<div class='x-grid-empty-custom'>There are no Scenarios defined yet.</div>",
         deferEmptyText: false
       },

@@ -6,6 +6,7 @@
 Ext.define("Phoenix.view.Viewport", {
   extend: "Ext.container.Viewport",
   requires: ["Phoenix.view.MainPanel"],
+  itemId: 'myViewport',
   layout: {
     type: "vbox",
     align: "stretch"
@@ -20,6 +21,7 @@ Ext.define("Phoenix.view.Viewport", {
           items: [
             {
               xtype: "image",
+              itemId: "myimage",
               src: "resources/icons/phoenix_logo.png",
               cls: "phoenix-logo",
               width: 120

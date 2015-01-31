@@ -8,6 +8,7 @@ Ext.define("Phoenix.view.MainPanel", {
   alias: "widget.phoenix-view-mainPanel",
   requires: ["Phoenix.view.ScenarioGrid"],
   controller: "Phoenix.controller.MainPanelController",
+  itemId: 'myMainPanel',
   header: false,
   plain: true,
   title: "PHOENIX Disaster Recovery Scenario Planner (DeftJS Example Application)",
