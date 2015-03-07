@@ -1,6 +1,10 @@
 Ext.define("Phoenix.view.Some14Panel", {
 	extend: "Ext.form.Panel",
     alias: "widget.some-14-panel",
+    requires: [
+        'Ext.ux.Rixo.form.field.GridPicker'
+    ],
+
     title: 'some 14 panel',
     bodyPadding: 5,
     width: 350,
@@ -16,15 +20,22 @@ Ext.define("Phoenix.view.Some14Panel", {
 
     // The fields
     defaultType: 'textfield',
-    items: [{
+    items: [
+    {
         fieldLabel: 'First Name',
         name: 'first',
         allowBlank: false
-    }, {
+    }, 
+    {
         fieldLabel: 'Last Name',
         name: 'last',
         allowBlank: false
-    }],
+    },
+    {
+        xtype: "gridpicker",
+        itemId: "agridpicker"
+    }
+    ],
 
     // Reset and Submit buttons
     buttons: [{

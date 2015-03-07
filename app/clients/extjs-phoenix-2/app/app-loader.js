@@ -3,7 +3,8 @@
 Ext.Loader.setConfig({
   enabled: true,
   paths: {
-    "Phoenix": "app"
+    "Phoenix": "app",
+    'Ext.ux' : 'resources/ux'
   }
 });
 
