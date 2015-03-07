@@ -7,7 +7,13 @@ Ext.define("Phoenix.view.ScenarioGrid", {
   extend: "Ext.grid.Panel",
   alias: "widget.phoenix-view-scenarioGrid",
   controller: "Phoenix.controller.ScenarioGridController",
-  requires: ["Ext.grid.column.Number", "Ext.grid.column.Date", "Ext.grid.column.Action"],
+  requires: [
+    "Ext.grid.column.Number", 
+    "Ext.grid.column.Date", 
+    "Ext.grid.column.Action",
+    "Ext.ux.grid.CellTips",
+    "Ext.ux.grid.RowTips"
+    ],
   inject: ["scenarioStore", "probabilityStore"],
   itemId: 'myScenarioGrid',
   config: {
@@ -30,7 +36,7 @@ Ext.define("Phoenix.view.ScenarioGrid", {
           dataIndex: "description",
           flex: 1,
           renderer: function(value, metaData, record) {
-            metaData.tdAttr = "data-qtip='" + value + "'";
+            //metaData.tdAttr = "data-qtip='" + value + "'";
             return value;
           }
         }, {
@@ -102,6 +108,12 @@ Ext.define("Phoenix.view.ScenarioGrid", {
         emptyText: "<div class='x-grid-empty-custom'>There are no Scenarios defined yet.</div>",
         deferEmptyText: false
       },
+      plugins:[
+        // new Ext.ux.grid.RowTips('name')
+        new Ext.ux.grid.CellTips(function(grid, record, fieldName){
+          return 'Cell value : '+record.get(fieldName);
+        })
+      ],
       tbar: [
         {
           text: "New Scenario",
