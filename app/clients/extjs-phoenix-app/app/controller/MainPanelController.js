@@ -18,6 +18,14 @@ Ext.define("Phoenix.controller.MainPanelController", {
     }
   },
   init: function() {
+
+    // this.getView().add({
+    //     xtype: "panel",
+    //     itemId: "maine",
+    //     title: "maine",
+    //     closable: true
+    //   }).show();
+
     return this.callParent(arguments);
   },
   /**

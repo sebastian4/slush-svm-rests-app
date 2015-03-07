@@ -18,6 +18,13 @@ Ext.define("Phoenix.view.MainPanel", {
         {
           xtype: "phoenix-view-scenarioGrid"
         }
+        ,
+        {
+          xtype: "panel",
+          itemId: "maine2",
+          title: "maine2",
+          closable: true
+        }
       ]
     });
     return this.callParent(arguments);
