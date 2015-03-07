@@ -10,7 +10,8 @@ Ext.define("Phoenix.view.MainPanel", {
     "Phoenix.view.ScenarioGrid",
     "Phoenix.view.Some11Panel",
     "Phoenix.view.Some12Panel",
-    "Phoenix.view.Some13Panel"
+    "Phoenix.view.Some13Panel",
+    "Phoenix.view.Some14Panel"
   ],
   controller: "Phoenix.controller.MainPanelController",
   itemId: 'myMainPanel',
@@ -23,21 +24,22 @@ Ext.define("Phoenix.view.MainPanel", {
         {
           xtype: "phoenix-view-scenarioGrid",
           itemId: "scenarioGrid"
-        }
-        ,
+        },
         {
           xtype: "some-11-panel",
           itemId: "some11Panel"
-        }
-        ,
+        },
         {
           xtype: "some-12-panel",
           itemId: "some12Panel"
-        }
-        ,
+        },
         {
           xtype: "some-13-panel",
           itemId: "some13Panel"
+        },
+        {
+          xtype: "some-14-panel",
+          itemId: "some14Panel"
         }
       ]
     });
