@@ -6,7 +6,12 @@
 Ext.define("Phoenix.view.MainPanel", {
   extend: "Ext.tab.Panel",
   alias: "widget.phoenix-view-mainPanel",
-  requires: ["Phoenix.view.ScenarioGrid"],
+  requires: [
+    "Phoenix.view.ScenarioGrid",
+    "Phoenix.view.Some11Panel",
+    "Phoenix.view.Some12Panel",
+    "Phoenix.view.Some13Panel"
+  ],
   controller: "Phoenix.controller.MainPanelController",
   itemId: 'myMainPanel',
   header: false,
@@ -16,14 +21,23 @@ Ext.define("Phoenix.view.MainPanel", {
     Ext.applyIf(this, {
       items: [
         {
-          xtype: "phoenix-view-scenarioGrid"
+          xtype: "phoenix-view-scenarioGrid",
+          itemId: "scenarioGrid"
         }
         ,
         {
-          xtype: "panel",
-          itemId: "maine2",
-          title: "maine2",
-          closable: true
+          xtype: "some-11-panel",
+          itemId: "some11Panel"
+        }
+        ,
+        {
+          xtype: "some-12-panel",
+          itemId: "some12Panel"
+        }
+        ,
+        {
+          xtype: "some-13-panel",
+          itemId: "some13Panel"
         }
       ]
     });
