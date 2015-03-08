@@ -121,9 +121,15 @@ Ext.define("Phoenix.view.ScenarioGrid", {
           text: "New Scenario",
           itemId: "addButton",
           iconCls: "add-icon"
-        }, {
+        }, 
+        {
           xtype: "component",
           html: " (Double click row to edit)"
+        }, 
+        {
+          text: "Extra",
+          itemId: "extraButton",
+          iconCls: "support-icon"
         }
       ]
     });

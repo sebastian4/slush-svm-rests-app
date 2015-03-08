@@ -22,6 +22,10 @@
     background: url('../icons/copy.png');
 }
 
+.support-icon {
+    background: url('../icons/support.png');
+}
+
 .editorWithMargin {
     margin-top: 4px;
 }
