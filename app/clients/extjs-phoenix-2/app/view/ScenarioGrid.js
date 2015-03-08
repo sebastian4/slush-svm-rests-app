@@ -12,7 +12,8 @@ Ext.define("Phoenix.view.ScenarioGrid", {
     "Ext.grid.column.Date", 
     "Ext.grid.column.Action",
     "Ext.ux.grid.CellTips",
-    "Ext.ux.grid.RowTips"
+    "Ext.ux.grid.RowTips",
+    "Ext.ux.grid.showConditionalToolTip"
     ],
   inject: ["scenarioStore", "probabilityStore"],
   itemId: 'myScenarioGrid',
@@ -109,10 +110,11 @@ Ext.define("Phoenix.view.ScenarioGrid", {
         deferEmptyText: false
       },
       plugins:[
+        new Ext.ux.grid.showConditionalToolTip()
         // new Ext.ux.grid.RowTips('name')
-        new Ext.ux.grid.CellTips(function(grid, record, fieldName){
-          return 'Cell value : '+record.get(fieldName);
-        })
+        // new Ext.ux.grid.CellTips(function(grid, record, fieldName){
+        //   return 'Cell value : '+record.get(fieldName);
+        // })
       ],
       tbar: [
         {
