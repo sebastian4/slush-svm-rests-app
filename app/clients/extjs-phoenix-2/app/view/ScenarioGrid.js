@@ -110,7 +110,9 @@ Ext.define("Phoenix.view.ScenarioGrid", {
         deferEmptyText: false
       },
       plugins:[
-        new Ext.ux.grid.showConditionalToolTip()
+        new Ext.ux.grid.showConditionalToolTip({
+          pluginId: "aaa"
+        })
         // new Ext.ux.grid.RowTips('name')
         // new Ext.ux.grid.CellTips(function(grid, record, fieldName){
         //   return 'Cell value : '+record.get(fieldName);

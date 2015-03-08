@@ -20,11 +20,16 @@ Ext.define("Phoenix.controller.ScenarioGridController", {
     },
     scenarioActionColumn: {
       click: "onActionColumnClick"
+    },
+    extraButton: {
+      click: "onExtraButtonClick"
     }
   },
   config: {
     uuidGenerator: Ext.create("Ext.data.UuidGenerator")
   },
+  showTooltipToggle: true,
+
   init: function() {
     return this.callParent(arguments);
   },
@@ -75,6 +80,31 @@ Ext.define("Phoenix.controller.ScenarioGridController", {
     });
     return this.getScenarioContext().scenarioOpened(scenario);
   },
+
+  onExtraButtonClick: function() {
+    console.debug("onExtraButtonClick");
+    // console.debug(this.getView());
+
+    // var conditionalTooltip = new Ext.ux.grid.showConditionalToolTip();
+    // conditionalTooltip.init(this.getView());
+    // this.getView().plugins.push(conditionalTooltip);
+    // this.getView().getView().refresh();
+    // console.debug(this.getView());
+
+    if (this.showTooltipToggle) {
+      this.showTooltipToggle = false;
+    }
+    else {
+      this.showTooltipToggle = true;
+    }
+    
+    var tooltipPl = this.getView().getPlugin("aaa");
+    // console.debug(tooltipPl);
+    tooltipPl.setActive(this.showTooltipToggle);
+    // tooltipPl.disable();
+    this.getView().getView().refresh();
+  },
+
   /**
   	* Handles a request to edit a {Phoenix.model.Scenario} model.
   */
