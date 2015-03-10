@@ -67,14 +67,20 @@ Ext.define('Ext.ux.seb.TimezoneSelector', {
             ]
         });
 
-        // self.control({
-        //     ".link1": {
-        //         click: self.funky
-        //     }
-        // });
 
         this.callParent();
     },
+
+    // init: function() {
+
+    //     console.debug("timezone selector init");
+
+    //     this.control({
+    //         ".link1": {
+    //             click: self.funky
+    //         }
+    //     });
+    // },
 
     getValue: function () {
         return this.timezoneCombobox.getValue();
