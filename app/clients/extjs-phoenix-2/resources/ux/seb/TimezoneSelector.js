@@ -7,6 +7,12 @@ Ext.define('Ext.ux.seb.TimezoneSelector', {
 
     bodyCls: 'body-panel-gray',
 
+    fieldLabel: 'default label',
+
+    funky: function(combo, records) {
+        console.log("funky selected "+this.getValue());
+    },
+
     initComponent: function () {
 
         console.debug("timezone selector initComponent");
@@ -38,7 +44,7 @@ Ext.define('Ext.ux.seb.TimezoneSelector', {
             width: 450,
             labelWidth: 150,
 
-            fieldLabel: 'a display label',
+            fieldLabel: this.fieldLabel,
             displayField: 'name',
             valueField: 'val',
             store: timezoneStore,
@@ -46,18 +52,26 @@ Ext.define('Ext.ux.seb.TimezoneSelector', {
             typeAhead: true,
 
             listeners: {
-                select: function (combo, records) {
-                    console.debug("something selected");
-                    console.debug(self.timezoneCombobox.getValue());
-                }
+                select: this.funky
             }
         });
 
         Ext.apply(this, {
             items: [
+                {
+                    html: "<a class='link1' href='#'>link 1</a>&nbsp;&nbsp;"
+                            +"<a class='link2' href='#'>link 2</a>",
+                    xtype: "panel"
+                },
                 this.timezoneCombobox
             ]
         });
+
+        // self.control({
+        //     ".link1": {
+        //         click: self.funky
+        //     }
+        // });
 
         this.callParent();
     },
