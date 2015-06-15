@@ -41,8 +41,8 @@ Ext.define('Ext.ux.seb.TimezoneSelector', {
             name: 'browserTimeZoneId',
             xid: 'timeZoneComboBox',
 
-            width: 450,
-            labelWidth: 150,
+            // width: 450,
+            // labelWidth: 150,
 
             fieldLabel: this.fieldLabel,
             displayField: 'name',
@@ -50,6 +50,19 @@ Ext.define('Ext.ux.seb.TimezoneSelector', {
             store: timezoneStore,
             queryMode: 'local',
             typeAhead: true,
+
+            width: '100%',
+            labelWidth: '20%',
+
+            labelAlign: 'right',
+            matchFieldWidth: true,
+
+            // columnWidth: '50%',
+
+            // fieldStyle: 'width: 160px !important',
+
+            // width: '300%',
+            // labelWidth: '2%',
 
             listeners: {
                 select: this.funky
@@ -84,6 +97,10 @@ Ext.define('Ext.ux.seb.TimezoneSelector', {
 
     getValue: function () {
         return this.timezoneCombobox.getValue();
+    },
+
+    getRawValue: function () {
+        return this.timezoneCombobox.getRawValue();
     }
 
 });

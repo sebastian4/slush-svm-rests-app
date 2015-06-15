@@ -160,3 +160,11 @@ body .ux-notification-error {
     padding: 6px 4px;
     white-space: nowrap;
 }
+
+.body-panel-gray {
+    background-color: grey;
+}
+
+/*.body-panel-gray .x-form-item-body {
+    width: '140px' !important;
+}*/

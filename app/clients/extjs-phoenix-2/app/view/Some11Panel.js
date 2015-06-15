@@ -14,6 +14,7 @@ Ext.define("Phoenix.view.Some11Panel", {
 
     	var timezoneSelector = Ext.create('Ext.ux.seb.TimezoneSelector', {
     		fieldLabel: 'my own label',
+            width: '40%',
     		funky: function() {
     			console.log("my funcky selected "+this.getValue());
     		}
@@ -22,7 +23,8 @@ Ext.define("Phoenix.view.Some11Panel", {
     	var myButton = Ext.create('Ext.Button', {
 		    text    : 'Dynamic Handler Button',
 		    handler : function() {
-		    	console.debug("panel clicked "+timezoneSelector.getValue());
+		    	console.debug("value "+timezoneSelector.getValue());
+                console.debug("rawValue "+timezoneSelector.getRawValue());
 		    }
 		});
 
