@@ -37,6 +37,8 @@
     // add gizmo rest
     require('./rest-gizmo').addRest(app);
 
+    // add todo rest
+    require('./rest-todo').addRest(app);
   }
 
   ////
