@@ -14,14 +14,14 @@
         console.log("todos testing");
         service.sayHello();
         console.log(service.getAll());
-        service.add({ id: 999, description: "cook spagetti" });
-        service.add({ id: 998, description: "wash car" });
-        service.add({ id: 997, description: "visit john" });
+        service.add({ id: 999, title: "cook spagetti", completed: false });
+        service.add({ id: 998, title: "wash car", completed: false });
+        service.add({ id: 997, title: "visit john", completed: false });
         console.log(service.getAll());
         console.log(service.get(998));
         service.remove(997);
         console.log(service.getAll());
-        service.update({ id: 999, description: "cook spagetti on low" });
+        service.update({ id: 999, title: "cook spagetti on low", completed: false });
         console.log(service.getAll());
         res.send('todos testing');
     });
