@@ -1,0 +1,103 @@
+
+.holder {
+  width: 60em;
+  height: 34em;
+  border-color: gray;
+  border-style: dashed;
+  border-width: 0.1em;
+}
+
+.dropzone {
+  position: relative;
+  top: 55.4%;
+  background-color: #E0E0E0;
+  width: 46em;
+  height: 13.4em;
+  border: dashed 1em transparent;
+  z-index: -1;
+  vertical-align: bottom;
+}
+
+.draggable {
+  border-radius: 1em;
+  width: 3.8em;
+  height: 3.8em;
+  float:left;
+  background-color: #2196F3;
+  color: white;
+  padding: 0.5em;
+  margin: 0.6em;
+}
+
+.a-space {
+    opacity: 0.1;
+}
+
+.drop-active {
+  border-color: #aaa;
+}
+
+.drop-target {
+  background-color: #B8B8B8;
+  color: #FFF;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.letter-inside {
+    position: relative;
+    text-align: center;
+    top: 8%;
+    font-size: 3em;
+}
+
+.extras {
+  border-radius: 1em;
+  width: 3.8em;
+  height: 3.8em;
+  float:left;
+  background-color: #2196F3;
+  color: white;
+  padding: 0.5em;
+  margin: 0.6em;
+}
+
+.icon-image {
+  width: 4em;
+  height: 4em;
+}
+
+.imagezone {
+  position: relative;
+  top: 2.4%;
+  background-color: #AEC6CF;
+  width: 11em;
+  height: 11.4em;
+  border: dashed 1em transparent;
+  z-index: 1;
+  float: right;
+}
+
+#zone-image {
+  width: 11em;
+  height: 11em;
+}
+
+.messagezone {
+  position: relative;
+  top: 49.4%;
+  left: 78.5%;
+  background-color: #CACADA;
+  width: 12.6em;
+  height: 1.7em;
+  border: dashed 0.1em transparent;
+  padding: 0.1em;
+  z-index: 1;
+  /*float: right;*/
+}
+
+.messaging {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.7em;
+}
