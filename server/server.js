@@ -39,6 +39,10 @@
 
     // add todo rest
     require('./rest-todo').addRest(app);
+    
+    // add message rest
+    require('./rest-message').addRest(app);
+    
   }
 
   ////
