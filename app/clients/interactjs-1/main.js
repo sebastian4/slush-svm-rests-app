@@ -2,11 +2,15 @@ $(function () {
 ////
 
 var voices = ["US English Female", "UK English Female", "UK English Male", "Australian Female", "Spanish Female"];
-voiceIndex = 0;
+var voiceIndex = 0;
 
 var colors = ["#FF0000","#F1C40F","#00FF00","#008000","#008000","#FF00FF","#800080","#FFA07A","#00FFFF","#F1948A"];
 
+var lastWord = "-";
+var lastDataItems = [];
+
 var imagesSource = 0;
+var imagesSourceMax = 1;
 var imageIndex = 0;
 
 var messages = [ "messages" ];
@@ -17,6 +21,7 @@ var preWords = [ "one", "two", "three" ];
 var preWordsIndex = 0;
 var preWordsFileIndex = 0;
 var preWordsFileIndexMax = 5;
+
 ////
 
 // this is for debugging. when degugging, uncomment
@@ -71,15 +76,30 @@ var preWordsFileIndexMax = 5;
     .on('tap', voiceOneTapListener)
     .on('hold', voiceDoubleTapListener);
     
-  interact('.imagezone')
-    .on('doubletap', imageDoubleTapListener)
-    .on('tap', imageOneTapListener)
-    .on('hold', clearImageArea);
+  // interact('.imagezone')
+    // .on('doubletap', imageDoubleTapListener)
+    // .on('tap', imageRightTapListener)
+    // .on('hold', clearImageArea);
     
+  interact('#leftplate')
+    .on('tap', imageLeftTapListener);
+  
+  interact('#rightplate')
+      .on('tap', imageRightTapListener);
+  
+  interact('#images')
+    .on('tap', imageDoubleTapListener)
+    .on('doubletap', clearImageArea)
+    .on('hold', changeImagesSourceMax);
+  
+  interact('#lessonmode')
+    .on('tap', changeFileIndex)
+    .on('doubletap', changeLessonMode);
+  
   interact('#reset')
-    .on('tap', resetClones)
-    .on('doubletap', changeLessonMode)
-    .on('hold', changeFileIndex);
+    .on('tap', resetClones);
+    // .on('doubletap', changeLessonMode)
+    // .on('hold', changeFileIndex);
       
   interact('#info')
     .on('tap', showInfo);
@@ -250,12 +270,26 @@ var preWordsFileIndexMax = 5;
   
   ////
 
-  function imageOneTapListener (event) {
+  function imageRightTapListener (event) {
     //console.log( "image one tap" );
     
     var cloneString = findCloneString();
     
     // console.log(cloneString);
+    
+    increaseImageIndex();
+
+    getImages(cloneString);
+  }
+  
+  function imageLeftTapListener (event) {
+    //console.log( "image one tap" );
+    
+    var cloneString = findCloneString();
+    
+    // console.log(cloneString);
+    
+    decreaseImageIndex();
 
     getImages(cloneString);
   }
@@ -264,7 +298,7 @@ var preWordsFileIndexMax = 5;
     //console.log( "image double tap" );
 
     imagesSource++;
-    if (imagesSource > 2) {
+    if (imagesSource > imagesSourceMax) {
       imagesSource = 0;
     }
     
@@ -281,7 +315,18 @@ var preWordsFileIndexMax = 5;
       setMessage("set google imgs");
     }
 
+    lastDataItems = null;
+    
     clearImageArea();
+  }
+  
+  function changeImagesSourceMax (event) {
+    if (imagesSourceMax == 1) {
+      imagesSourceMax = 2;
+    }
+    else { // == 2
+      imagesSourceMax = 1;
+    }
   }
   
   function clearImageArea (event) {
@@ -383,6 +428,11 @@ var preWordsFileIndexMax = 5;
     word = word.toUpperCase();
     // console.log("copyWord: "+word);
     
+    var position = $("#dropzone").offset();
+    var topposition = position.top + 10;
+    // console.log(position);
+    // console.log(topposition);
+    
     for (var i = 0, len = word.length; i < len; i++) {
       
       var aTarget = $("#box-"+word[i]).get()[0];
@@ -390,7 +440,8 @@ var preWordsFileIndexMax = 5;
       var clone = aTarget.cloneNode(true);
       clone.dragOrigin = null;
       document.body.appendChild(clone);
-      clone.style="position:absolute; left:"+lessonLetterPosition+"%; top:40%;"
+      var stylestr = "position:absolute; left:"+lessonLetterPosition+"%; top:"+topposition+"px;";
+      clone.style = stylestr;
       clone.className += " aclone";
       
       lessonLetterPosition+=9;
@@ -504,11 +555,52 @@ var preWordsFileIndexMax = 5;
   ////
   
   function getImages(word) {
-    // console.log("getImages "+word);
+    // console.log("getImages: "+word);
+    word = word.replace("'","");
     
     if (word == "") {
       return;
     }
+    
+    if ( word === lastWord && lastDataItems !== null && lastDataItems.length > 0 ) {
+      
+      // console.log("using saved list ajax call");
+      // console.log(lastDataItems);
+      
+      if (imagesSource == 0) {
+        clearImageArea();
+      }
+      else if (imagesSource == 1) {
+        // console.log("flickr call");
+        
+        var link = lastDataItems[imageIndex].media.m;
+        // console.log(link);
+        
+        $("#zone-image").attr("src", link);
+        
+        setMessage("flickr img "+imageIndex);
+        
+        // increaseImageIndex();
+        
+      }
+      else if (imagesSource == 2) {
+        // console.log("google call");
+        
+        var link = lastDataItems[imageIndex].link;
+        // console.log(link);
+        
+        $("#zone-image").attr("src", link);
+        
+        setMessage("google img "+imageIndex);
+        
+        // increaseImageIndex();
+        
+      }
+    
+      return;
+    }
+    
+    // console.log("doing actual ajax call");
     
     if (imagesSource == 0) {
       clearImageArea();
@@ -522,22 +614,23 @@ var preWordsFileIndexMax = 5;
         format: "json"
       },
       function(data) {
-        //console.log("success");
+        // console.log("flickr success");
 
         if (typeof(data)!="undefined" && typeof(data.items)!="undefined") {
           
           var link = data.items[imageIndex].media.m;
+          // console.log(link);
+          
           $("#zone-image").attr("src", link);
+          
+          lastDataItems = data.items;
           
           setMessage("flickr img "+imageIndex);
           
-          imageIndex++;
-          if (imageIndex > 8) {
-            imageIndex = 0;
-          }
+          // increaseImageIndex();
         }
         else {
-          //console.log("flicker image responses were undefined");
+          // console.log("flicker image responses were undefined");
           clearImageArea();
           setMessage("flickr no response");
         }
@@ -552,7 +645,7 @@ var preWordsFileIndexMax = 5;
         dataType: "jsonp",
         url: "https://www.googleapis.com/customsearch/v1",
         data: {
-          key: "AIzaSyCzb6SI_JRrp6xLLYV617Ary6n59h36ros",
+        //   key: "AIzaSyCzb6SI_JRrp6xLLYV617Ary6n59h36ros",
           cx: "004286675445984025592:ypgpkv9fjd4",
           filter: "1",
           searchType: "image",
@@ -561,25 +654,24 @@ var preWordsFileIndexMax = 5;
         }
       }).done(function(data) {
       
-        // console.log("success");
+        // console.log("google success");
         
         if (typeof(data)!="undefined" && typeof(data.items)!="undefined") {
           
-          var googleResults = data.items;
-          var link = googleResults[imageIndex].link;
-          //console.log(link);
+          // var googleResults = data.items;
+          var link = data.items[imageIndex].link;
+          // console.log(link);
           
           $("#zone-image").attr("src", link);
           
+          lastDataItems = data.items;
+
           setMessage("google img "+imageIndex);
           
-          imageIndex++;
-          if (imageIndex > 8) {
-            imageIndex = 0;
-          }
+          // increaseImageIndex();
         }
         else {
-          //console.log("google image responses were undefined");
+          // console.log("google image responses were undefined");
           clearImageArea();
           setMessage("google no response");
         }
@@ -588,6 +680,21 @@ var preWordsFileIndexMax = 5;
       
     }
 
+    lastWord = word;
+  }
+  
+  function increaseImageIndex() {
+    imageIndex++;
+    if (imageIndex > 9) {
+      imageIndex = 0;
+    }
+  }
+  
+  function decreaseImageIndex() {
+    imageIndex--;
+    if (imageIndex < 0) {
+      imageIndex = 9;
+    }
   }
   
   ////
