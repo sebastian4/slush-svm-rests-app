@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>Super Landon Menu</title>
+<script type="text/javascript" src="mariodd.js"></script>
+<link href="marioddstyle.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h4><span  title="v.1.0" >Super Landon World Menu</span></h4>
+
+<nav>
+	<ul>
+	
+		<li><a href="javascript:playMario();" class="mplay">Play</a></li>
+		
+		<li><a href="#" id="msprite">Sprite: landon</a>
+			<ul>
+				<li><a href="javascript:changeSprite('landon');">Landon</a></li>
+				<li><a href="javascript:changeSprite('mario');">Mario</a></li>
+			</ul>
+		</li>
+		
+		<li><a href="#" id="mdetail">Detail: gift</a>
+			<ul>
+				<li><a href="#">Include Gift Frame</a>
+					<ul>
+						<li><a href="javascript:changeDetail('gift');">Yes</a></li>
+						<li><a href="javascript:changeDetail('nogift');">No</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:changeDetail('tablet');">For Tablet</a></li>
+			</ul>
+		</li>
+		
+		<li><a href="#" id="mlevel">Level: 0</a>
+			<ul>
+				<li><a href="javascript:changeLevel(0);">Level 0</a></li>
+				<li><a href="javascript:changeLevel(1);">Level 1</a></li>
+				<li><a href="javascript:changeLevel(2);">Level 2</a></li>
+				<li><a href="javascript:changeLevel(3);">Level 3</a></li>
+				<li><a href="javascript:changeLevel(4);">Level 4</a></li>
+				<li><a href="javascript:changeLevel(5);">Level 5</a></li>
+				<li><a href="javascript:changeLevel(6);">Level 6</a></li>
+				<li><a href="javascript:changeLevel(7);">Level 7</a></li>
+			</ul>
+		</li>
+		
+	</ul>
+	
+</nav>
+
+<p class="instructions">
+Instructions: To move the sprite, use the arrow keys, to jump: up or shift,
+move right or left: right and left keys,
+to crouch: down arrow, to shoot: control-key.
+</p>
+
+</body>
+
+</html>
