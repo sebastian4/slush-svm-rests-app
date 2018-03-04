@@ -204,14 +204,14 @@ function AudioSynthView() {
 					var thisKey = document.createElement('div');
 					if(n.length>1) {
 						thisKey.className = 'black key';
-						thisKey.style.width = '30px';
-						thisKey.style.height = '120px';
-						thisKey.style.left = (40 * (iWhite - 1)) + 25 + 'px';
+						thisKey.style.width = '40px';
+						thisKey.style.height = '250px';
+						thisKey.style.left = (60 * (iWhite - 1)) + 40 + 'px';
 					} else {
 						thisKey.className = 'white key';
-						thisKey.style.width = '40px';
-						thisKey.style.height = '200px';
-						thisKey.style.left = 40 * iWhite + 'px';
+						thisKey.style.width = '60px';
+						thisKey.style.height = '360px';
+						thisKey.style.left = 60 * iWhite + 'px';
 						iWhite++;
 					}
 					var label = document.createElement('div');
@@ -228,7 +228,7 @@ function AudioSynthView() {
 			}
 		}
 
-		visualKeyboard.style.width = iWhite * 40 + 'px';
+		visualKeyboard.style.width = iWhite * 60 + 'px';
 
 		window.addEventListener(evtListener[1], function() { n = keysPressed.length; while(n--) { fnRemoveKeyBinding({keyCode:keysPressed[n]}); } });
 	
@@ -236,7 +236,9 @@ function AudioSynthView() {
 
 	// Creates our audio player
 	var fnPlayNote = function(note, octave) {
-
+		console.log('playNote');
+		console.log(note+' '+octave);
+		
 		src = __audioSynth.generate(selectSound.value, note, octave, 2);
 		container = new Audio(src);
 		container.addEventListener('ended', function() { container = null; });

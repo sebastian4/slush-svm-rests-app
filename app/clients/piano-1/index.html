@@ -7,7 +7,7 @@
 
 <title>Musical Keyboard</title>
 
-<link rel="stylesheet" href="src/sample.css">
+<link rel="stylesheet" href="src/piano.css">
 
 <script async="" src="./src/analytics.js"></script><script src="./src/audiosynth.js"></script>
 <script src="./src/audiosynth.view.js"></script>
@@ -21,6 +21,7 @@
 <div class="keyboard-options">
 
 <div>
+	
 	Sound
 	<select id="sound">
 		<option value="0" selected="">Keyboard</option>
@@ -28,21 +29,20 @@
 	    <option value="2">Acoustic Guitar</option>
 	    <option value="3">EDM, bro!</option>
 	</select>
+	
+	Range [C<span id="OCTAVE_LOWER">3</span>-B<span id="OCTAVE_UPPER">5</span>]
+	<input type="button" id="-_OCTAVE" value="-">
+	<input type="button" id="+_OCTAVE" value="+">
+	
 </div>
+<br/><br/>
 
-<div id="keyboard" class="keyboard-holder" style="width: 100%;">
-</div>
-
-<div class="keyboard-options">
-Range [C<span id="OCTAVE_LOWER">3</span>-B<span id="OCTAVE_UPPER">5</span>]
-<input type="button" id="-_OCTAVE" value="-">
-<input type="button" id="+_OCTAVE" value="+"><br>
-<i>(Use left/right arrows to adjust with keyboard)</i>
-</div>
+<div id="keyboard" class="keyboard-holder"></div>
 
 </div>
 
-<script src="src/sample.js"></script>
+<script src="src/piano.js"></script>
+<script src="src/samp-1.js"></script>
 
 </body>
 
