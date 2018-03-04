@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Musical Keyboard</title>
+
+<link rel="stylesheet" href="src/sample.css">
+
+<script async="" src="./src/analytics.js"></script><script src="./src/audiosynth.js"></script>
+<script src="./src/audiosynth.view.js"></script>
+
+</head>
+
+<body>
+
+<div class="title">Musical Keyboard</div>
+
+<div class="keyboard-options">
+
+<div>
+	Sound
+	<select id="sound">
+		<option value="0" selected="">Keyboard</option>
+		<option value="1">Organ</option>
+	    <option value="2">Acoustic Guitar</option>
+	    <option value="3">EDM, bro!</option>
+	</select>
+</div>
+
+<div id="keyboard" class="keyboard-holder" style="width: 100%;">
+</div>
+
+<div class="keyboard-options">
+Range [C<span id="OCTAVE_LOWER">3</span>-B<span id="OCTAVE_UPPER">5</span>]
+<input type="button" id="-_OCTAVE" value="-">
+<input type="button" id="+_OCTAVE" value="+"><br>
+<i>(Use left/right arrows to adjust with keyboard)</i>
+</div>
+
+</div>
+
+<script src="src/sample.js"></script>
+
+</body>
+
+</html>
